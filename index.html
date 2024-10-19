@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>ByteArray</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
@@ -21,12 +22,17 @@
         }
         body {
             transition: background-color 0.3s ease-in-out;
+            font-family: 'Lato', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
         }
         .navbar {
             background-color: #333333;
             width: 100%;
             top: 0;
             padding: 10px 20px;
+            position: fixed;
+            z-index: 999;
         }
 
         .nav-container {
@@ -60,7 +66,7 @@
             color: #fff;
             font-size: 27px;
             padding: 10px;
-            font-family: "source-serif-pro", serif !important;
+            font-family: "Source Serif Pro", serif !important;
             font-weight: 500;
             text-align: center;
             transition: color 0.5s ease, font-weight 0.5s ease;
@@ -111,6 +117,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #f9f9f9;
         }
         .smallReg p{ 
             font-family: "Lato";
@@ -140,10 +147,11 @@
             justify-content: center;
             align-items: center;
             background-color: #333333;
+            position: relative;
         }
         .addVer img{
             width: 40vw;
-            height: 100vh;
+            height: 90vh;
         }
         .addVer #infoBox{
             margin: 5vw;
@@ -153,10 +161,14 @@
             justify-content: center;
             color: #fff;
             flex-direction: column;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
         }
         .addVer #infoBox p{
             font-family: "Catamaran";
             font-size: 2vw;
+            line-height: 1.5;
         }
         #slideshow {
             width: 50vw;
@@ -175,6 +187,117 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
+            padding: 20px;
+        }
+        .teaser{
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .teaser p{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            font-family: 'Sarpanch', sans-serif;
+            font-size: 3vw;
+            font-weight: bold;
+            color: #333333;
+        }
+        #sb{
+            font-family: "Lato";
+            font-weight: 700;
+            text-align: left;
+            border-radius: 100px;
+            border: none;
+            width: 14.5vw;
+            height: 2.5vw;
+            padding: 0px 35px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1vw;
+            cursor: pointer;
+            background-color: #FF686B;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        #sb:hover {
+            background-color: #e55a5a;
+        }
+        #player{
+            width: 100%;
+            max-width: 800px;
+            height: 70vh;
+        }
+        .map {
+            padding: 40px;
+            background-color: #f9f9f9;
+            text-align: center;
+            font-family: 'Sarpanch', sans-serif;
+            font-size: 2vw;
+            color: #333333;
+        }
+        .map .text {
+            margin-bottom: 20px;
+        }
+        .ticket {
+            padding: 40px 20px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+        }
+        .ticket h2 {
+            font-family: 'Sarpanch', sans-serif;
+            font-size: 3vw;
+            margin-bottom: 20px;
+            text-decoration: underline;
+            color: #FF686B;
+        }
+        .ticket form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .ticket label {
+            font-size: 1.5vw;
+            text-align: left;
+            width: 100%;
+        }
+        .ticket input[type="text"],
+        .ticket input[type='mail'],
+        .ticket select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2vw;
+        }
+        .ticket button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            background-color: #FF686B;
+            color: #fff;
+            font-size: 1.2vw;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .ticket button:hover {
+            background-color: #e55a5a;
+        }
+        .ticket-message {
+            margin-top: 30px;
+            font-size: 1.5vw;
+            line-height: 1.5;
         }
         @media only screen and (max-width: 1088px) {
             .nav-container {
@@ -197,7 +320,7 @@
             }
             .nav-list li a{
                 color: white !important;
-                font-family: "source-serif-pro", serif !important;
+                font-family: "Source Serif Pro", serif !important;
                 font-weight: 600;
                 font-size: 1.6rem !important;
                 opacity: .5;
@@ -294,6 +417,24 @@
             #upbutton{
                 font-size: 3.3vw;
             }
+            .ticket h2 {
+                font-size: 4vw;
+            }
+            .ticket form {
+                gap: 15px;
+            }
+            .ticket label, .ticket input[type="text"], .ticket select, .ticket button {
+                font-size: 3vw;
+            }
+            .ticket-message {
+                font-size: 3vw;
+            }
+            .teaser p, .shop h1 {
+                font-size: 4vw;
+            }
+            #player {
+                height: 50vh;
+            }
         }
     </style>
 </head>
@@ -329,31 +470,61 @@
         <p><span>Collab with Us or Volunteer.&nbsp; &nbsp;</span><span id="upbutton"><a href="">Check out!</a><span> &nbsp;&nbsp;&#10095;</span></span></p>
     </div>
     <div class="addVer">
-        <img id="slideshow" src="1.jpg" alt="Slideshow Image">
-        <div id="infoBox"><h1 style="font-family: 'Sarpanch'; font-size: 5vw; text-decoration: underline;">Who are we?</h1><br><p>ByteArray an event organised by Delhi Tech Circuit is a place where club from different school(s) collaborate with each other to showcase their knowledge. <br><br> ByteArray is not just a event but a place where highschool clubs and coders meet each other and get to know about each other <br> Get your highschool IT club statewide exposure today! <br><button>Check out</button></p></div>
-    </div>
-    <div class="teaser">
-        <video video autoplay loop muted playsinline poster="asset/img/bg.png" id="bgVideo"video autoplay loop muted playsinline poster="asset/img/bg.png" id="bgVideo">
-            <source src="" type="mp4/video">
-        </video>
-    </div>
-    <div class="map">
-        <div class="text">How to reach? <br> Let us guide you!
+        <img id="slideshow" src="1.png" alt="Slideshow Image">
+        <div id="infoBox">
+            <h1 style="font-family: 'Sarpanch'; font-size: 5vw; text-decoration: underline;">Who are we?</h1><br>
+            <p>ByteArray an event organised by Delhi Tech Circuit is a place where club from different school(s) collaborate with each other to showcase their knowledge. <br><br> ByteArray is not just an event but a place where highschool clubs and coders meet each other and get to know about each other <br> Get your highschool IT club statewide exposure today! <br>
+                <button id="sb">Check out<span class="material-symbols-outlined" style="margin-left: 20px;">open_in_new</span></button>
+            </p>
         </div>
     </div>
+    <div class="teaser">
+        <p><strong>Still</strong></p>
+        <iframe id="player" width="1903" height="782" src="https://www.youtube.com/embed/7Ip06ojd5Q4" title="ByteArray | Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p><strong>waiting?</strong></p>
+    </div>
+    <div class="map">
+        <div class="text">How to reach? <br> Let us guide you!</div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="ticket">
+        <h2>Get Your Ticket</h2>
+        <form action="#" method="POST">
+            <label for="name">Your name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <label for="name">Your email:</label>
+            <input type="mail" id="mail" name="huh" placeholder="Enter your email" required>
+            <label for="seat">Select Your Seating Plan:</label>
+            <select id="seat" name="seat" required>
+                <option value="" disabled selected>Select a row</option>
+                <option value="1st row">1st Row</option>
+                <option value="2nd row">2nd Row</option>
+                <option value="3rd row">3rd Row</option>
+                <option value="4th row">4th Row</option>
+                <option value="5th row">5th Row</option>
+            </select>
+            <label for="foodCheckbox">Include food in the ticket: &nbsp; <input type="checkbox" id="foodCheckbox" name="includeFood"></label>
+            <p>Total Price: <span id="totalPrice">0</span> INR</p>
+            <button type="submit">Purchase Ticket</button>
+        </form>
+    </div>
     <div class="shop">
-        <strong><h1>Snatch our goodies!</h1></strong>
-        <p>DTC's ByteArray brings you a precious chance to grab on some cool and skibidi items which are available at our store. <br> Purchasing these products not only benifits you but us too!</p>
-        <button style="cursor: pointer;">Shop</button>
+        <strong><h1 style="font-family: 'Sarpanch'; font-size: 5vw;">Snatch our goodies!</h1></strong>
+        <p style="font-family: 'Lato', sans-serif; font-size: 1.4vw;">DTC's ByteArray brings you a precious chance to grab on some cool and skibidi items which are available at our store. <br> Purchasing these products not only benefits you but us too!</p>
+        <br>
+        <button id="sb" style="cursor: pointer;" onclick="doThis()">Shop <span class="material-symbols-outlined" style="margin-left: 20px;">open_in_new</span></button>
     </div>
     <div class="ban">
-        <img style="width: 100%; height: 70vh; display: block; margin: 0;padding: 0;" src="banner.jpg">
+        <img style="width: 100%; height: 70vh; display: block; margin: 0;padding: 0;" src="banner.png" alt="Banner">
     </div>
-    <div style="background-color: #333333; color: #fff; font-family: 'Lato', sans-serif; display: flex; justify-content: center;" class="notDiv">
+    <div style="background-color: #333333; color: #fff; font-family: 'Lato', sans-serif; display: flex; justify-content: center; padding: 20px;" class="notDiv">
         ByteArray &copy; 2024-25
     </div>
     <script>
-        const images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg'];
+        function doThis(){
+            window.open('shop.html')
+        }
+        const images = ['1.png', '2.png', '3.png', '4.png', '5.png'];
         let currentIndex = 0;
         const imgElement = document.getElementById('slideshow');
         function changeImage() {
@@ -365,6 +536,19 @@
             }, 1500); 
         }
         setInterval(changeImage, 5000);
+        const seatSelect = document.getElementById('seat');
+        const foodCheckbox = document.getElementById('foodCheckbox');
+        const totalPriceElement = document.getElementById('totalPrice');
+        function calculatePrice() {
+            const selectedOption = seatSelect.options[seatSelect.selectedIndex];
+            let basePrice = parseInt(selectedOption.getAttribute('data-baseprice')) || 0;
+            if (foodCheckbox.checked) {
+                basePrice += 100;
+            }
+            totalPriceElement.textContent = basePrice;
+        }
+    seatSelect.addEventListener('change', calculatePrice);
+    foodCheckbox.addEventListener('change', calculatePrice);
         const burger = document.querySelector('.burger');
         const cross = document.querySelector('.cross');
         const navContainer = document.querySelector('.nav-container');
