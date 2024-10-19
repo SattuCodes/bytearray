@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nCreate Submission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Ubuntu", sans-serif;
+            background-color: #FEEFEF;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 30vw;
+            margin: auto;
+            position: relative;
+            height: 140vh;
+        }
+        .container img {
+            width: 100%;
+        }
+        h2 {
+            font-family: "Orbitron", sans-serif;
+            text-align: center;
+            font-size: 2vw;
+        }
+        .layer {
+            margin-bottom: 2vw;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5vw;
+        }
+        input[type="text"],
+        input[type="url"] {
+            width: 96%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container button {
+            width: 20%;
+            padding: 10px;
+            background-color: #D83E3E;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+        .container button:hover {
+            background-color: #c51f1f;
+        }
+        .container button.hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="surp1.png" alt="Logo">
+    <h2>nCreate Submission</h2>
+    <form action="#" method="post" onsubmit="handleSubmit(event)">
+        <div class="layer">
+            <label for="school">School Name</label>
+            <input type="text" id="school" name="school_name" required>
+        </div>
+        <div class="layer">
+            <label for="discord-id">Discord ID</label>
+            <input type="text" id="discord-id" name="discord_id" required>
+        </div>
+        <div class="layer">
+            <label for="contact">Contact Number</label>
+            <input type="text" id="contact" name="contact_number" required>
+        </div>
+        <div class="layer">
+            <label for="participant1">Name of Participant 1</label>
+            <input type="text" id="participant1" name="participant1" required>
+        </div>
+        <div class="layer">
+            <label for="participant2">Name of Participant 2</label>
+            <input type="text" id="participant2" name="participant2" required>
+        </div>
+        <div class="layer">
+            <label for="participant3">Name of Participant</label>
+            <input type="text" id="participant3" name="participant3">
+        </div>
+        <div class="layer">
+            <label for="participant4">Name of Participant</label>
+            <input type="text" id="participant4" name="participant4">
+        </div>
+        <div class="layer">
+            <label for="google-drive">Link to Google Drive (including all deliverables and project files)</label>
+            <input type="url" id="google-drive" name="google_drive" required>
+        </div>
+        <div class="layer">
+            <label for="website">Link to Website/App</label>
+            <input type="url" id="website" name="website" required>
+        </div>
+        <div class="layer">
+            <label for="pitch-deck">Link to Pitch Deck (preferably Behance link)</label>
+            <input type="url" id="pitch-deck" name="pitch_deck" required>
+        </div>
+        <button type="submit" id="submit-button">Submit</button>
+    </form>
+</div>
+
+<script>
+    // Moving button on hover
+    const button = document.getElementById('submit-button');
+    const container = document.querySelector('.container');
+
+    button.addEventListener('mouseover', () => {
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
+        const buttonWidth = button.offsetWidth;
+        const buttonHeight = button.offsetHeight;
+        const maxX = containerWidth - buttonWidth;
+        const maxY = containerHeight - buttonHeight;
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+        button.style.left = randomX + 'px';
+        button.style.top = randomY + 'px';
+    });
+    button.addEventListener('mouseenter', () => {
+        button.classList.add('hide');
+        setTimeout(() => {
+            button.classList.remove('hide');
+        }, 1000);
+    });
+
+    // Input delay
+    const inputs = document.querySelectorAll('input[type="text"], input[type="url"]');
+    inputs.forEach(input => {
+        input.addEventListener('input', (event) => {
+            event.preventDefault();
+            setTimeout(() => {
+                input.value = event.target.value;
+            }, 500);
+        });
+    });
+    function handleSubmit(event) {
+        event.preventDefault();
+        alert("Submission blocked!");
+    }
+</script>
+
+</body>
+</html>
