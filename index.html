@@ -610,7 +610,7 @@
     </div>
     <script>
         function doThis(){
-            window.open('shop.html')
+            window.open('shop.html',"_self")
         }
         const images = ['asset/1.png', 'asset/2.png', 'asset/3.png', 'asset/4.png', 'asset/5.png'];
         let currentIndex = 0;
@@ -635,8 +635,8 @@
             }
             totalPriceElement.textContent = basePrice;
         }
-    seatSelect.addEventListener('change', calculatePrice);
-    foodCheckbox.addEventListener('change', calculatePrice);
+        seatSelect.addEventListener('change', calculatePrice);
+        foodCheckbox.addEventListener('change', calculatePrice);
         const burger = document.querySelector('.burger');
         const cross = document.querySelector('.cross');
         const navContainer = document.querySelector('.nav-container');

@@ -321,6 +321,62 @@
             <div class="product-price">199 INR</div>
         </div>  
     </section>
-    
+    <script>
+        const burger = document.querySelector('.burger');
+        const cross = document.querySelector('.cross');
+        const navContainer = document.querySelector('.nav-container');
+        const navbar = document.querySelector('.navbar');
+        const logoImg = document.querySelector('.logo img');
+        const navlist = document.querySelector('.nav-list');
+        const moblogo = document.querySelector('.moblogo');
+        const body = document.querySelector('body');
+        const newLogoSrc = 'asset/logo.png';
+        const originalLogoSrc = 'asset/logo.png';
+
+        burger.addEventListener('click', () => {
+            navContainer.classList.toggle('v-class');
+            navbar.classList.toggle('h-nav');
+            navlist.classList.toggle('v-class');
+            burger.classList.toggle('active');
+            cross.classList.toggle('active');
+            moblogo.classList.toggle('hidden');
+            if (navContainer.classList.contains('v-class')) {
+                logoImg.src = originalLogoSrc;
+                body.style.backgroundColor = '#ffffff';
+                navContainer.style.pointerEvents = 'none';
+                body.style.overflowY = 'auto';
+                body.classList.remove('hidden-content'); 
+            } else {
+                logoImg.src = newLogoSrc;
+                body.style.backgroundColor = '#1e1e1e';
+                navContainer.style.pointerEvents = 'auto';
+                body.style.overflowY = 'hidden';
+                body.classList.add('hidden-content');
+            }
+        });
+
+        cross.addEventListener('click', () => {
+            navContainer.classList.toggle('v-class');
+            navbar.classList.toggle('h-nav');
+            navlist.classList.toggle('v-class');
+            burger.classList.toggle('active');
+            cross.classList.toggle('active');
+            moblogo.classList.toggle('hidden');
+
+            if (navContainer.classList.contains('v-class')) {
+                logoImg.src = originalLogoSrc;
+                body.style.backgroundColor = '#ffffff';
+                navContainer.style.pointerEvents = 'none';
+                body.style.overflowY = 'auto';
+                body.classList.remove('hidden-content'); 
+            } else {
+                logoImg.src = newLogoSrc;
+                body.style.backgroundColor = '#1e1e1e';
+                navContainer.style.pointerEvents = 'auto';
+                body.style.overflowY = 'hidden';
+                body.classList.add('hidden-content');
+            }
+        });
+    </script>
 </body>
 </html>
